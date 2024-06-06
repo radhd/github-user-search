@@ -1,7 +1,7 @@
 function ResultCard() {
   return (
     <div className="">
-      <span>HELLLOOO</span>
+      <span>Result Card</span>
     </div>
   );
 }
