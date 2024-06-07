@@ -1,10 +1,12 @@
 // import ResultCard from "./components/ResultCard";
 import SearchDev from "./components/SearchDev";
+import Navigation from "./components/navigation";
 
 function App() {
   return (
-    <div className="flex h-screen min-h-screen flex-col items-center justify-center">
-      <SearchDev />
+    <div className="mx-auto max-w-[730px]">
+      <Navigation />
+      {/* <SearchDev /> */}
     </div>
   );
 }

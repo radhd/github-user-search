@@ -1,10 +1,7 @@
 import { Users } from "../userInterfaces";
 import {
-  BeakerIcon,
   EnvelopeIcon,
-  GlobeEuropeAfricaIcon,
   LinkIcon,
-  MapIcon,
   MapPinIcon,
   UserGroupIcon,
 } from "@heroicons/react/24/solid";
