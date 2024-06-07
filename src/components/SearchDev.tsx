@@ -2,6 +2,10 @@ import { useState } from "react";
 import { Users } from "../userInterfaces";
 import { fetchUsers } from "./fetchUsers";
 import ResultCard from "./ResultCard";
+import {
+  MagnifyingGlassCircleIcon,
+  MagnifyingGlassIcon,
+} from "@heroicons/react/24/solid";
 
 function SearchDev() {
   const [search, setSearch] = useState<string>("");
@@ -20,20 +24,27 @@ function SearchDev() {
   };
 
   return (
-    <div className="">
-      <input
-        onChange={(event) => onChange(event)}
-        value={search}
-        type="text"
-        className="border border-slate-500 focus:outline-none"
-      />
-      <button onClick={onClick} className="bg-blue-500">
-        Search
-      </button>
+    <>
+      <div className="flex h-20 w-full items-center gap-6 rounded-2xl py-6 pe-[0.625rem] ps-8 text-lg shadow-2xl">
+        <MagnifyingGlassIcon className="size-6 text-[#0079FF]" />
+        <input
+          onChange={(event) => onChange(event)}
+          value={search}
+          type="text"
+          className="w-full rounded-md border-none focus:outline-none"
+          placeholder="Search GitHub username…"
+        />
+        <button
+          onClick={onClick}
+          className="space-mono-bold ms-auto rounded-xl bg-blue-500 px-6 py-3 text-white"
+        >
+          Search
+        </button>
+      </div>
       <div>
         <ResultCard userArray={userArray} />
       </div>
-    </div>
+    </>
   );
 }
 

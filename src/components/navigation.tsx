@@ -18,7 +18,7 @@ function Navigation() {
 
   return (
     <>
-      <div className="flex h-screen items-center justify-between">
+      <div className="flex items-center justify-between">
         <p className="space-mono-bold mb-2 text-3xl text-[#222731] dark:text-white">
           devfinder
         </p>
