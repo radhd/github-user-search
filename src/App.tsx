@@ -5,7 +5,7 @@ import Navigation from "./components/navigation";
 function App() {
   return (
     <div className="body bg-[#f6f8ff] dark:bg-[#141D2F]">
-      <div className="mx-auto max-w-[730px]">
+      <div className="mx-auto max-w-[730px] space-y-9">
         <Navigation />
         <SearchDev />
       </div>
