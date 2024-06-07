@@ -28,7 +28,7 @@ function SearchDev() {
           onChange={(event) => onChange(event)}
           value={search}
           type="text"
-          className="w-full rounded-md border-none caret-[#697C9A] focus:outline-none dark:bg-[#1E2A47] dark:caret-white"
+          className="w-full rounded-md border-none caret-[#697C9A] focus:outline-none dark:bg-[#1E2A47] dark:text-white dark:caret-white"
           placeholder="Search GitHub username…"
         />
         <button
