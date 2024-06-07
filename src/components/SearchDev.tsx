@@ -2,10 +2,7 @@ import { useState } from "react";
 import { Users } from "../userInterfaces";
 import { fetchUsers } from "./fetchUsers";
 import ResultCard from "./ResultCard";
-import {
-  MagnifyingGlassCircleIcon,
-  MagnifyingGlassIcon,
-} from "@heroicons/react/24/solid";
+import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 
 function SearchDev() {
   const [search, setSearch] = useState<string>("");
@@ -25,13 +22,13 @@ function SearchDev() {
 
   return (
     <>
-      <div className="flex h-20 w-full items-center gap-6 rounded-2xl py-6 pe-[0.625rem] ps-8 text-lg shadow-2xl">
+      <div className="flex h-20 w-full items-center gap-6 rounded-2xl bg-white py-6 pe-[0.625rem] ps-8 text-lg shadow-2xl dark:bg-[#1E2A47]">
         <MagnifyingGlassIcon className="size-6 text-[#0079FF]" />
         <input
           onChange={(event) => onChange(event)}
           value={search}
           type="text"
-          className="w-full rounded-md border-none focus:outline-none"
+          className="w-full rounded-md border-none caret-[#697C9A] focus:outline-none dark:bg-[#1E2A47] dark:caret-white"
           placeholder="Search GitHub username…"
         />
         <button

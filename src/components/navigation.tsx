@@ -29,9 +29,15 @@ function Navigation() {
             </p>
           }
           {isDark === "dark" ? (
-            <SunIcon className="size-5 text-white" onClick={onClick} />
+            <SunIcon
+              className="size-5 cursor-pointer text-white"
+              onClick={onClick}
+            />
           ) : (
-            <MoonIcon onClick={onClick} className="size-5 text-[#697C9A]" />
+            <MoonIcon
+              onClick={onClick}
+              className="size-5 cursor-pointer text-[#697C9A]"
+            />
           )}
         </div>
       </div>
