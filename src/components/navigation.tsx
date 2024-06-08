@@ -23,11 +23,7 @@ function Navigation() {
           devfinder
         </p>
         <div className="space-mono-bold flex space-x-4 text-sm text-[#697C9A] dark:text-white">
-          {
-            <p>
-              <p>{isDark === "dark" ? "LIGHT" : "DARK"}</p>
-            </p>
-          }
+          {<p>{isDark === "dark" ? "LIGHT" : "DARK"}</p>}
           {isDark === "dark" ? (
             <SunIcon
               className="size-5 cursor-pointer text-white"

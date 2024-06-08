@@ -8,7 +8,7 @@ function ReposInformation(props: Props) {
   return (
     <div>
       <p className="text-sm text-[#4B6A9B]">{infoType}</p>
-      <p className="space-mono-bold text-2xl">{infoApi}</p>
+      <p className="space-mono-bold text-2xl dark:text-white">{infoApi}</p>
     </div>
   );
 }

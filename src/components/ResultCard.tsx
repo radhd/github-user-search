@@ -6,6 +6,8 @@ import {
   UserGroupIcon,
 } from "@heroicons/react/24/solid";
 import ReposInformation from "./ReposInformation.tsx";
+import MediaInfo from "./MediaInfo.tsx";
+import UserJoined from "./UserJoined.tsx";
 
 interface ResultCardProps {
   userArray: Users[];
@@ -15,14 +17,19 @@ function ResultCard({ userArray }: ResultCardProps): React.ReactElement {
   return (
     <div>
       {userArray.map((user) => (
-        <div key={user.id} className="grid grid-cols-10 bg-white p-12">
-          <div className="col-span-2 h-28 w-28">
+        <div
+          key={user.id}
+          className="grid grid-cols-12 bg-white p-12 dark:bg-[#1E2A47]"
+        >
+          {/* Image */}
+          <div className="col-span-3 h-28 w-28">
             <img className="rounded-full" src={user.avatar_url} alt="" />
           </div>
-          <div className="col-span-7 space-y-4">
+
+          <div className="col-span-8 space-y-4">
             <div className="flex">
-              <p className="text-3xl">
-                <strong>{user.name}</strong>
+              <p className="space-mono-bold text-3xl dark:text-white">
+                {user.name}
               </p>
             </div>
             <a
@@ -35,7 +42,9 @@ function ResultCard({ userArray }: ResultCardProps): React.ReactElement {
             <p className="text-[#4B6A9B]">
               {user.bio ? user.bio : "This profile has no bio"}
             </p>
-            <div className="grid grid-cols-3 bg-[#F6F8FF] px-8 py-4">
+
+            {/* Repos info */}
+            <div className="grid grid-cols-3 rounded-xl bg-[#F6F8FF] px-8 py-4 dark:bg-[#141D2F]">
               <ReposInformation
                 infoType={"Repos"}
                 infoApi={user.public_repos}
@@ -49,30 +58,39 @@ function ResultCard({ userArray }: ResultCardProps): React.ReactElement {
                 infoApi={user.following}
               />
             </div>
-            <div className="grid grid-cols-2">
-              <div className="flex">
-                <MapPinIcon className="size-5 text-blue-500" />
-                <div>{user.location ? user.location : "Not Available"}</div>
-              </div>
-              <div className="flex">
-                <LinkIcon className="size-5" />
-                <div>{user.html_url}</div>
-              </div>
-              <div className="flex">
-                <EnvelopeIcon className="size-5" />
-                <div>{user.email ? user.email : "Not Available"}</div>
-              </div>
-              <div className="flex">
-                <UserGroupIcon className="size-5" />
-                <div>{user.type}</div>
-              </div>
+            <div className="grid grid-cols-2 gap-5">
+              <MediaInfo
+                icon={
+                  <MapPinIcon className="size-5 text-[#4B6A9B] dark:text-white" />
+                }
+                infoApi={user.location}
+              />
+
+              <MediaInfo
+                icon={
+                  <EnvelopeIcon className="size-5 text-[#4B6A9B] dark:text-white" />
+                }
+                infoApi={user.email}
+              />
+
+              <MediaInfo
+                icon={
+                  <LinkIcon className="size-5 text-[#4B6A9B] dark:text-white" />
+                }
+                infoApi={user.blog}
+              />
+
+              <MediaInfo
+                icon={
+                  <UserGroupIcon className="size-5 text-[#4B6A9B] dark:text-white" />
+                }
+                infoApi={user.type}
+              />
             </div>
           </div>
-          {/* REPOS INFO/FOLLOWERS/FOLLOWING */}
           <div>
-            <p>{user.created_at}</p>
+            <UserJoined created={user.created_at} />
           </div>
-          {/* Location/GITHUBURL */}
         </div>
       ))}
     </div>
