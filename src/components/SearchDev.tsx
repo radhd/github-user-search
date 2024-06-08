@@ -38,9 +38,7 @@ function SearchDev() {
           Search
         </button>
       </div>
-      <div>
-        <ResultCard userArray={userArray} />
-      </div>
+      <ResultCard userArray={userArray} />
     </>
   );
 }
