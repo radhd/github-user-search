@@ -5,6 +5,7 @@ import {
   MapPinIcon,
   UserGroupIcon,
 } from "@heroicons/react/24/solid";
+import ReposInformation from "./ReposInformation.tsx";
 
 interface ResultCardProps {
   userArray: Users[];
@@ -34,19 +35,19 @@ function ResultCard({ userArray }: ResultCardProps): React.ReactElement {
             <p className="text-[#4B6A9B]">
               {user.bio ? user.bio : "This profile has no bio"}
             </p>
-            <div className="grid grid-cols-3">
-              <div>
-                <div>Repos</div>
-                <div>{user.public_repos}</div>
-              </div>
-              <div>
-                <div>Followers</div>
-                <div>{user.followers}</div>
-              </div>
-              <div>
-                <div>Following</div>
-                <div>{user.following}</div>
-              </div>
+            <div className="grid grid-cols-3 bg-[#F6F8FF] px-8 py-4">
+              <ReposInformation
+                infoType={"Repos"}
+                infoApi={user.public_repos}
+              />
+              <ReposInformation
+                infoType={"Followers"}
+                infoApi={user.followers}
+              />
+              <ReposInformation
+                infoType={"Following"}
+                infoApi={user.following}
+              />
             </div>
             <div className="grid grid-cols-2">
               <div className="flex">

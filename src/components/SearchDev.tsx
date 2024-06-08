@@ -10,7 +10,7 @@ function SearchDev() {
 
   const onClick = async () => {
     const userData = await fetchUsers(search);
-    console.log(userData);
+    console.log(typeof userData?.public_repos);
     if (userData) {
       setUserArray([userData]);
     }
