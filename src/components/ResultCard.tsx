@@ -88,7 +88,7 @@ function ResultCard({ userArray }: ResultCardProps): React.ReactElement {
               />
             </div>
           </div>
-          <div>
+          <div className="col-span-1">
             <UserJoined created={user.created_at} />
           </div>
         </div>
